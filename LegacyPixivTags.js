@@ -2,7 +2,7 @@
 // @name         Pixiv legacy tag list
 // @namespace    https://github.com/Kyuu0707/
 // @version      0.9
-// @description  adds button to send user to legacy bookmarks list
+// @description  adds button to send user to legacy tag list
 // @author       Kyuu
 // @match        https://www.pixiv.net/member*
 // @grant        none
@@ -23,7 +23,7 @@ function main()
     var myNode = elems[0];
     console.log(myNode);
     var myButton = document.createElement("Button");
-    myButton.innerHTML = "Bookmarks";
+    myButton.innerHTML = "Tag List";
     myButton.addEventListener('click',goToTags);
     myNode.appendChild(myButton);
 }
