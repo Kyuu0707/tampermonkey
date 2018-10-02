@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Pixiv legacy tag list
 // @namespace    https://github.com/Kyuu0707/
-// @version      0.9
+// @version      1.0
 // @description  adds button to send user to legacy tag list
 // @author       Kyuu
 // @match        https://www.pixiv.net/member*
@@ -14,6 +14,11 @@ function goToTags()
     var idx = url.indexOf('=');
     url = url.slice(idx+1,url.length);
     //console.log(url);
+    var idx2 = url.indexOf('&');
+    if(idx2 !== -1)
+    {
+        url = url.slice(0,idx2);
+    }
     window.location.href = "https://www.pixiv.net/member_tag_all.php?id=" + url;
 }
 
@@ -24,6 +29,7 @@ function main()
     console.log(myNode);
     var myButton = document.createElement("Button");
     myButton.innerHTML = "Tag List";
+    myButton.style = "text-decoration:none;border:none;background-color:#ffffff;color:#258fb8;font-weight:200;";
     myButton.addEventListener('click',goToTags);
     myNode.appendChild(myButton);
 }
