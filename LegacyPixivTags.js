@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Pixiv legacy tag list
-// @namespace    lmao who knows man
+// @namespace    https://github.com/Kyuu0707/
 // @version      0.9
 // @description  adds button to send user to legacy bookmarks list
 // @author       Kyuu
