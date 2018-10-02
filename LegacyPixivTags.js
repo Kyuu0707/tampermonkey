@@ -19,8 +19,6 @@ function goToTags()
 
 function main()
 {
-    'use strict';
-
     var elems = document.getElementsByClassName('n5QTR4w');
     var myNode = elems[0];
     console.log(myNode);
