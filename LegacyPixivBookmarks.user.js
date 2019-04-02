@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Legacy pixiv bookmarks
 // @namespace    https://github.com/kyuu0707
-// @version      0.1
+// @version      1.0
 // @description  use old pixiv bookmark style
 // @author       Kyuu
 // @match        https://www.pixiv.net/member_illust*
@@ -9,8 +9,10 @@
 // ==/UserScript==
 
 var main = function() {
-    var bar = document.getElementsByClassName("_2g7Dix7")[0];
-    console.log(bar);
+
+
+    var myBar = document.body.childNodes[1].childNodes[1].childNodes[0].childNodes[1].childNodes[0].childNodes[0].childNodes[0].childNodes[0].childNodes[2].childNodes[0].childNodes[0];
+
     var mydiv = document.createElement("div");
 
     var mylink = document.createElement("a");
@@ -19,9 +21,8 @@ var main = function() {
     mylink.style = "text-decoration:none;color: rgb(51, 51, 51);cursor: pointer;display: inline-block;font-weight: 700;height: 32px;line-height: 32px;background: none;border-width: initial;border-style: none;border-color: initial;border-image: initial;padding: 0px";
     mydiv.appendChild(mylink);
     mydiv.style = "margin-right:20px";
-    bar.appendChild(mydiv);
+    myBar.appendChild(mydiv);
 
-    //bar.addEventListener('click',goTo);
 }
 
 
@@ -33,4 +34,4 @@ var goTo = function()
     return "https://www.pixiv.net/bookmark_add.php?type=illust&illust_id=" + url;
 }
 
-window.setTimeout(main, 100);
+window.setTimeout(main, 600);
