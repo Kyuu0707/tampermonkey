@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Pixiv legacy tag list
 // @namespace    https://github.com/Kyuu0707/
-// @version      1.21
+// @version      2.0
 // @description  adds button to send user to legacy tag list
 // @author       Kyuu
 // @match        https://www.pixiv.net/member*
@@ -12,10 +12,12 @@ function goToTags()
 {
     var url = window.location.href;
     //console.log(url);
+    /*
     if(url.includes("pixiv.net/member_illust.php\?mode"))
     {
         url = document.getElementsByClassName("e165rlrk3")[0].getAttribute("href");
     }
+    */
     var idx = url.indexOf('=');
     url = url.slice(idx+1,url.length);
     var idx2 = url.indexOf('&');
@@ -28,15 +30,17 @@ function goToTags()
 
 function main()
 {
-    var elems = document.getElementsByClassName('n5QTR4w');
-    var myNode = elems[0];
+    //var elems = document.getElementsByClassName('_-59EIiw');
+    //var myNode = elems[0];
+    var myNode = document.body.childNodes[1].childNodes[0].childNodes[0].childNodes[1].childNodes[0].childNodes[0];
     //console.log(myNode);
-    var myButton = document.createElement("Button");
+    var myli = document.createElement("li");
+    var myButton = document.createElement("a");
     myButton.innerHTML = "Tag List";
-    myButton.style = "text-decoration:none;border:none;background-color:#ffffff;color:#258fb8;font-weight:200;";
     myButton.addEventListener('click',goToTags);
-    myNode.appendChild(myButton);
+    myli.appendChild(myButton);
+    myNode.appendChild(myli);
 }
 
-window.setTimeout(main,100);
+window.setTimeout(main,400);
 
